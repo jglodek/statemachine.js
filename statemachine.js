@@ -1,21 +1,8 @@
-
-var EditorStateMachine = function(){};
-EditorStateMachine.prototype = {
+var StateMachine = function(){};
+StateMachine.prototype = {
 	current_state: "start",
 	states: {
 		start:{},
-		loading:{
-			before: function(){
-				console.log('enter loading');
-			},
-			after:function(){
-				console.log('after loading');					
-			},
-			mouse_clicked:function()
-			{
-				return 'start';
-			}
-		}	
 	},
 	processEvent: function(event){
 		cur = this.states[this.current_state];
