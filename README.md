@@ -14,6 +14,10 @@ WIP
 Usage
 -------
 
+You need to copy my code somewhere inside your app. And inside:
+
+	StateMachine.prototype = {}
+
 Define states inside 'states' hash. Set first first state as 'current_state', like that:
 
 ### States Declaration
