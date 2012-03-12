@@ -2,7 +2,9 @@ statemachine.js
 =============
 
 This is a little javascript state-machine that does the job for me.
+
 It's less complicated than https://github.com/jakesgordon/javascript-state-machine/
+
 I like C++ boost::statechart, so all the transitions are done within event handlers.
 
 Status
@@ -95,4 +97,4 @@ Enjoy
 -------
 Hope somebody finds it useful. Wrote it to learn making docs in github;p
 
-Jacek G³odek
+Jacek Glodek
