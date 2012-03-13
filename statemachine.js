@@ -1,19 +1,12 @@
-var StateMachine = function(){};
+/**
+* statemachine.js - simple statemachine by Jacek G³odek
+**/
+
+var StateMachine = function(states){
+	if(states!= null && states!= undefined)this.states=states;
+	else this.states = {};
+};
 StateMachine.prototype = {
-	current_state: "start",
-	states: {
-		start:{},
-		loading:{
-			event_with_transition:function()
-			{
-				return 'start';
-			}
-			event_with_parameters:function(param1,param2)
-			{
-				console.log("" + param1 + " " + param2);
-			}
-		}
-	},
 	processEvent: function(event, arg1, arg2, arg3, arg4, arg5){
 		cur = this.states[this.current_state];
 		if(cur!=null && cur!=undefined && cur[event] != null && cur[event]!=undefined)
@@ -31,8 +24,11 @@ StateMachine.prototype = {
 		}
 	},
 	jumpToState: function(newstate){
-		cur = this.states[this.current_state]; 
-		if(cur != null && cur != undefined && cur.after!=undefined)cur.after();
+		if(this.current_state != null && this.current_state != undefined)
+		{
+			cur = this.states[this.current_state]; 
+			if(cur != null && cur != undefined && cur.after!=undefined)cur.after();
+		}
 		this.current_state = newstate;
 		cur = this.states[this.current_state]; 
 		if(cur != null && cur != undefined && cur.before!=undefined)cur.before();

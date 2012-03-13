@@ -14,31 +14,41 @@ WIP
 Usage
 -------
 
-You need to copy my code somewhere inside your app. And inside:
+### Creating state machine
+Add script to your app. Create StateMachine object, like this:
 
-	StateMachine.prototype = {   ...HERE... }
-
-Define states inside 'states' hash. Set first first state as 'current_state', like that:
+	var fsm = new StateMachine();
 
 ### States Declaration
-	
-	current_state:"start",
-	states:{
+
+Declare states you need. In a constructor:	
+
+	var fsm = new StateMachine({
 		start:{},
 		loading:{},
 		dragging:{},
 		refreshing:{}
-	}
+	});
+
+or after creating with = operator;
+
+	fsm.states = {
+		start:{},
+		loading:{},
+		dragging:{},
+		refreshing:{}
+	};
 
 ### Event Handlers Declaration
 
 Add event handlers inside the states, like that:
 	
-	states:{
+	fsm.states = {
 		start:{},
 		dragging:{
-			user_click:function(e){},
-			user_mouseup:function(e){}
+			user_mousemove:function(e);
+			user_mousedown:function(some, arguments, go, here){},
+			user_mouseup:function(up, to, five, arguments){}
 		}
 	}
 
@@ -49,9 +59,10 @@ You can use two callbacks called when leaving and entering state:
 
 Like that:
 	
-	states:{
+	fsm.states = {
 		start:{},
 		loading:{
+			loaded:function(what_was_loaded){},
 			before:function(){},
 			after:function(){}
 		}
@@ -61,7 +72,7 @@ Like that:
 
 To make transitions return next state name string in event handler, like this:
 
-	states:{
+	fsm.states = {
 		start:{},
 		loading:{
 			loaded:function(){
@@ -75,7 +86,7 @@ To make transitions return next state name string in event handler, like this:
 
 Or use jumpToState(stateName) function, like this:
 
-	sm.jumpToState("loaded");
+	fsm.jumpToState("loaded");
 
 ### Runtime
 
@@ -83,7 +94,7 @@ Copy the code somewhere in your app.
 
 Create statemachine object: 
 	
-	var fsm = new StateMachine();
+	var fsm = new StateMachine( /** States definition hash here **/ );
 
 To control state machine call jumpToState, like this:
 
