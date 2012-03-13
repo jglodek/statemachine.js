@@ -3,9 +3,7 @@ statemachine.js
 
 This is a little javascript state-machine that does the job for me.
 
-It's less complicated than https://github.com/jakesgordon/javascript-state-machine/
-
-I like C++ boost::statechart, so all the transitions are done within event handlers.
+I like C++ boost::statechart, so all the transitions are done within event handlers. So there is no declaration of transitions. 
 
 Status
 -------
@@ -115,5 +113,7 @@ processEvent calls should be placed somewhere in your UI or AJAX event handlers,
 Enjoy
 -------
 Hope somebody finds it useful. Wrote it to learn making docs in github;p
+
+It's less complicated than https://github.com/jakesgordon/javascript-state-machine/
 
 Jacek Glodek
