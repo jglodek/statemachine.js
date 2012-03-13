@@ -93,7 +93,11 @@ Or process events, like this:
 
 	fsm.processEvent("loaded");
 
-processEvent calls should be hidden somewhere in your UI or AJAX event handlers, like(jQuery):
+You can process events with up to 5 parameters, like this:
+
+	fsm.processEvent("loaded", "dojox");
+
+processEvent calls should be placed somewhere in your UI or AJAX event handlers, like(jQuery):
 
 	$('#something').click(function(){fsm.processEvent('clicked-something');}); 
 
