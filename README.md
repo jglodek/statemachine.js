@@ -48,7 +48,7 @@ Add event handlers inside the states, like that:
 		dragging:{
 			user_mousemove:	function(e);
 			user_mousedown:	function(some, arguments, go, here){},
-			user_mouseup:		function(up, to, five, arguments){}
+			user_mouseup:	function(up, to, five, arguments){}
 		}
 	}
 
