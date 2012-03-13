@@ -16,7 +16,7 @@ Usage
 
 You need to copy my code somewhere inside your app. And inside:
 
-	StateMachine.prototype = {}
+	StateMachine.prototype = {   ...HERE... }
 
 Define states inside 'states' hash. Set first first state as 'current_state', like that:
 
