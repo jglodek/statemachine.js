@@ -3,12 +3,22 @@ StateMachine.prototype = {
 	current_state: "start",
 	states: {
 		start:{},
+		loading:{
+			event_with_transition:function()
+			{
+				return 'start';
+			}
+			event_with_parameters:function(param1,param2)
+			{
+				console.log("" + param1 + " " + param2);
+			}
+		}
 	},
-	processEvent: function(event){
+	processEvent: function(event, arg1, arg2, arg3, arg4, arg5){
 		cur = this.states[this.current_state];
 		if(cur!=null && cur!=undefined && cur[event] != null && cur[event]!=undefined)
 		{
-			var result = cur[event]();
+			var result = cur[event](arg1,arg2,arg3,arg4,arg5);
 			if(result != null && result != undefined)
 			{
 				this.jumpToState(result);
@@ -17,7 +27,7 @@ StateMachine.prototype = {
 		}
 		else
 		{
-			console.log('tried to process event without handler: '+event )
+			console.log('Tried to process event without handler: '+event )
 		}
 	},
 	jumpToState: function(newstate){
