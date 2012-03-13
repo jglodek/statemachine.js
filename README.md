@@ -110,6 +110,13 @@ processEvent calls should be placed somewhere in your UI or AJAX event handlers,
 
 	$('#something').click(function(){fsm.processEvent('clicked-something');}); 
 
+
+### Debug
+
+You can turn on debug info. Processed events without handlers will be reported in console.
+
+	fsm.debug = true;
+	
 Enjoy
 -------
 Hope somebody finds it useful. Wrote it to learn making docs in github;p

@@ -20,7 +20,7 @@ StateMachine.prototype = {
 		}
 		else
 		{
-				console.log('Tried to process event without handler: '+event + " in state: " + this.current_state );
+				if(this.debug==true)console.log('Tried to process event without handler: '+event + " in state: " + this.current_state );
 		}
 	},
 	jumpToState: function(newstate){
