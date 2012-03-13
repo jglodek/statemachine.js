@@ -46,9 +46,9 @@ Add event handlers inside the states, like that:
 	fsm.states = {
 		start:{},
 		dragging:{
-			user_mousemove:function(e);
-			user_mousedown:function(some, arguments, go, here){},
-			user_mouseup:function(up, to, five, arguments){}
+			user_mousemove:	function(e);
+			user_mousedown:	function(some, arguments, go, here){},
+			user_mouseup:		function(up, to, five, arguments){}
 		}
 	}
 
@@ -62,13 +62,13 @@ Like that:
 	fsm.states = {
 		start:{},
 		loading:{
-			loaded:function(what_was_loaded){},
-			before:function(){},
-			after:function(){}
+			loaded:	function(what_was_loaded){},
+			before:	function(){},
+			after:	function(){}
 		}
 	}
 	
-### Transitions
+### Logic And Transitions
 
 To make transitions return next state name string in event handler, like this:
 
